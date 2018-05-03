@@ -1,0 +1,24 @@
+Object Description
+Object Name: WHSE_LAND_AND_NATURAL_RESOURCE.PROT_HISTORICAL_FIRE_POLYS_SP
+
+Short Name: H_FIRE_PLY
+Comments: PROT_HISTORICAL_FIRE_POLYS_SP contains perimeter areas of historical (not current/active) fire incidents. The data contains the spatial representation of the area the incident occured within, specific and generalized cause information, and the total hectares, as well as the method used to create the spatial representation of the data.
+
+Column Name	Short Name	Data Type	Data Precision	Comments
+FIRE_NUMBER	FIRE_NO	VARCHAR2	10	FIRE_NUMBER is a composite of the following fields: Zone, Fire ID and Fire Centre.
+VERSION_NUMBER	VERSION_NO	NUMBER	10	VERSION_NUMBER represents the unique versions of the collected data. As additional data is tracked for an incident, new data will be stored in the datastore for the same incident. A new record is added with an incremented version number.
+FIRE_YEAR	FIRE_YEAR	NUMBER	4	FIRE_YEAR represents the fiscal year, April 1 to March 31.
+FIRE_CAUSE	FIRE_CAUSE	VARCHAR2	20	FIRE_CAUSE is the suspected cause of the fire, e.g., Lightning, Person.
+FIRE_LABEL	FIRELABEL	VARCHAR2	16	FIRE_LABEL is the concatenation of Fire Number and Fire Year.
+FIRE_SIZE_HECTARES	SIZE_HA	NUMBER	10	FIRE_SIZE_HECTARES indicates the area within the outside perimeter of the incident, in hectares.
+SOURCE	SOURCE	VARCHAR2	50	SOURCE identifies the method used to create the spatial data for load into the datastore.
+GPS_TRACK_DATE	TRACK_DATE	DATE	7	GPS_TRACK_DATE represents the date the incident was initially tracked via GPS.
+LOAD_DATE	LOAD_DATE	DATE	7	LOAD_DATE epresents the date the incident was initially loaded into the datastore.
+FIRE_DATE	FIRE_DATE	DATE	7	FIRE_DATE represent the date and time when the incident was reported.
+CREATION_METHOD	METHOD	VARCHAR2	50	The Creation Method identifies the method used to collect the spatial data.
+FEATURE_CODE	FCODE	VARCHAR2	10	FEATURE_CODE contains an alphanumeric value based on the Canadian Council of Surveys and Mapping’s (CCSM) system for classification of geographic features, e.g., AR82000110.
+SHAPE	SHAPE	SDO_GEOMETRY	1	SHAPE is the column used to reference the spatial coordinates defining the feature.
+OBJECTID	OBJECTID	NUMBER	38	OBJECTID is a column required by spatial layers that interact with ESRI ArcSDE. It is populated with unique values automatically by SDE.
+SE_ANNO_CAD_DATA		BLOB	4000	SE_ANNO_CAD_DATA is a binary column used by spatial tools to store annotation, curve features and CAD data when using the SDO_GEOMETRY storage data type.
+FEATURE_AREA_SQM		NUMBER	19	FEATURE_AREA_SQM is the system calculated area of a two-dimensional polygon in square meters
+FEATURE_LENGTH_M		NUMBER	19	FEATURE_LENGTH_M is the system calculated length or perimeter of a geometry in meters
